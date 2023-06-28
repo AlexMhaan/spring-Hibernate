@@ -1,43 +1,47 @@
 package com.example.springHibernate;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
+
+@Entity
 public class Employee implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    @Column(name = "id_employee")
+    private Long idEmployee;
 
+    @Column(name = "employee_name")
     private String employeeName;
 
+    @Column(name = "employee_email")
     private String employeeEmail;
 
+    @Column(name = "employee_age")
     private Integer employeeAge;
 
     public Employee(){}
 
     public Employee(
-            Long id,
+            Long idEmployee,
             String employeeName,
             String employeeEmail,
             Integer employeeAge
     ) {
-        this.id = id;
+        this.idEmployee = idEmployee;
         this.employeeName = employeeName;
         this.employeeEmail = employeeEmail;
         this.employeeAge = employeeAge;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdEmployee() {
+        return idEmployee;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdEmployee(Long idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
     public String getEmployeeName() {
@@ -67,7 +71,7 @@ public class Employee implements Serializable {
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + id +
+                "id=" + idEmployee +
                 ", employeeName='" + employeeName + '\'' +
                 ", employeeEmail='" + employeeEmail + '\'' +
                 ", employeeAge=" + employeeAge + '\n' +

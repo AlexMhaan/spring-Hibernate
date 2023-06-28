@@ -1,0 +1,1 @@
+insert into employee (id_employee, employee_name, employee_email, employee_age) values (3, 'Juanita', 'juanita@gmail.com', 35);
