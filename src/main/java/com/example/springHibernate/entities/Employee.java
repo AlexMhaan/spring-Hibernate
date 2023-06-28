@@ -1,4 +1,4 @@
-package com.example.springHibernate;
+package com.example.springHibernate.entities;
 
 import jakarta.persistence.*;
 

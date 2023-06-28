@@ -1,5 +1,6 @@
-package com.example.springHibernate;
+package com.example.springHibernate.repository;
 
+import com.example.springHibernate.entities.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

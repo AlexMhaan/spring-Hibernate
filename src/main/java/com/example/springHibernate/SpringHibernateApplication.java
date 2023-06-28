@@ -1,5 +1,8 @@
 package com.example.springHibernate;
 
+import com.example.springHibernate.dao.EmployeeDAO;
+import com.example.springHibernate.entities.Employee;
+import com.example.springHibernate.repository.EmployeeRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -17,12 +20,17 @@ public class SpringHibernateApplication {
 
 		EmployeeRepository repository = context.getBean(EmployeeRepository.class);
 
-		Employee employee0 = new Employee(null, "Juan Carlos", "juanca@employee.com", 25);
+		Employee employee0 = new Employee(null, "Trufis", "trufa@employee.com", 44);
 		Employee employee1 = new Employee(null, "Juan Carlos", "juanca@employee.com", 25);
 
 		repository.save(employee0);
 		repository.save(employee1);
 
+		System.out.println(repository.findAll());
+
+
+		EmployeeDAO employeeDAO = context.getBean(EmployeeDAO.class);
+		System.out.println(employeeDAO.findAllEmployees());
 
 	}
 
