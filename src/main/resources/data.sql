@@ -1,1 +1,1 @@
-insert into employee (id_employee, employee_name, employee_email, employee_age) values (3, 'Juanita', 'juanita@gmail.com', 35);
+insert into employee (id_employee, employee_name, employee_email, employee_age, registration_date, active, salary) values (null, 'Juanita', 'juanita@gmail.com', 35, '2023-1-1',true, 55000);

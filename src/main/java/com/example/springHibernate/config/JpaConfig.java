@@ -15,7 +15,7 @@ public class JpaConfig {
 
     @Bean
     public Session getSession(){
-        System.out.println("Creando Bean Session");
+        System.out.println("Creando Bean Session"); //Ver por consola en que momento de la ejecución se muestra.
         SessionFactory sessionFactory = entityManagerFactory.unwrap(SessionFactory.class);
 
         return sessionFactory.openSession();

@@ -3,6 +3,7 @@ package com.example.springHibernate.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 
 @Entity
@@ -22,18 +23,29 @@ public class Employee implements Serializable {
     @Column(name = "employee_age")
     private Integer employeeAge;
 
+    @Column(name = "registration_date")
+    private LocalDate registrationDate;
+
+    private Boolean active;
+
+    private Double salary;
     public Employee(){}
 
-    public Employee(
-            Long idEmployee,
-            String employeeName,
-            String employeeEmail,
-            Integer employeeAge
+    public Employee(Long idEmployee,
+                    String employeeName,
+                    String employeeEmail,
+                    Integer employeeAge,
+                    LocalDate registrationDate,
+                    Boolean active,
+                    Double salary
     ) {
         this.idEmployee = idEmployee;
         this.employeeName = employeeName;
         this.employeeEmail = employeeEmail;
         this.employeeAge = employeeAge;
+        this.registrationDate = registrationDate;
+        this.active = active;
+        this.salary = salary;
     }
 
     public Long getIdEmployee() {
@@ -68,13 +80,40 @@ public class Employee implements Serializable {
         this.employeeAge = employeeAge;
     }
 
+    public LocalDate getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + idEmployee +
+                "idEmployee=" + idEmployee +
                 ", employeeName='" + employeeName + '\'' +
                 ", employeeEmail='" + employeeEmail + '\'' +
-                ", employeeAge=" + employeeAge + '\n' +
+                ", employeeAge=" + employeeAge +
+                ", registrationDate=" + registrationDate +
+                ", active=" + active +
+                ", salary=" + salary + '\n' +
                 '}';
     }
 }
