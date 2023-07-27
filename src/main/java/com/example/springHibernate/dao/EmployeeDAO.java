@@ -8,6 +8,9 @@ public interface EmployeeDAO    {
 
     List<Employee> findAllEmployees();
 
+    List<Employee> findAllLimit25();
 
-    List<Employee> findAtEmployeesLimit25();
+    Employee saveEmployee(Employee employee);
+
+
 }
